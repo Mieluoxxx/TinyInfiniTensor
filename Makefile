@@ -1,10 +1,11 @@
-﻿.PHONY : build clean format install-python test-cpp test-onnx
+.PHONY : build clean format install-python test-cpp test-onnx
 
 TYPE ?= Release
 TEST ?= ON
 
 CMAKE_OPT = -DCMAKE_BUILD_TYPE=$(TYPE)
 CMAKE_OPT += -DBUILD_TEST=$(TEST)
+CMAKE_OPT += -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
 build:
 	mkdir -p build/$(TYPE)
